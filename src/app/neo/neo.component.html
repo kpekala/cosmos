@@ -14,10 +14,12 @@
         <mat-label>End date</mat-label>
         <input matInput type="date" formControlName="endDate">
       </mat-form-field>
-      
+
       <button mat-stroked-button color="primary" class="search-btn"
         type="submit" [disabled]="searchForm.invalid">
         Search</button>
+     
+      <mat-spinner *ngIf="isLoading" diameter="48"></mat-spinner>
     </div>
   </form>
 </div>
