@@ -1,8 +1,22 @@
 <div class="neo-container">
+  <div class="title-container">
+      <span class="neo-title">Near Earth Object Web Service</span>
+  </div>
+  <form class="example-form">
     <div class="search-container">
-        <span class="neo-title">Near Earth Object Web Service</span>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Start date</mat-label>
+        <input matInput type="date" >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>End date</mat-label>
+        <input matInput type="date">
+      </mat-form-field>
+      <button mat-stroked-button color="primary" class="search-btn">
+        Search</button>
+      
     </div>
-    <div>
-        
-    </div>
+  </form>
 </div>
