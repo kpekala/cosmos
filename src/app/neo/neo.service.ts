@@ -7,7 +7,7 @@ import { environment } from "src/environments";
 export class NeoService {
   constructor(private http: HttpClient) {}
 
-  fetchAsteroids(): Observable<any> {
+  fetchAsteroids(startDate: string, endDate: string): Observable<any> {
     const apiKey = environment.nasaApiKey;
     const params = new HttpParams()
       .set('api_key', apiKey) 

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NeoComponent } from './neo.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
@@ -22,6 +22,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forChild(routes),
     FormsModule, 
+    ReactiveFormsModule,
     MatFormFieldModule, 
     MatInputModule,
     MatButtonModule

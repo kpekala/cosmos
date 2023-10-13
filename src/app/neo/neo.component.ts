@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NeoService } from './neo.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-neo',
@@ -8,17 +9,26 @@ import { NeoService } from './neo.service';
 })
 export class NeoComponent implements OnInit{
 
+  searchForm: FormGroup;
   asteroids = []
 
   constructor(private neoService: NeoService){}
 
   ngOnInit(): void {
-    this.neoService.fetchAsteroids().subscribe(
-      {
-        next: (data) => {
-          console.log(data);
-        }
+    this.searchForm = new FormGroup({
+      'startDate': new FormControl('', Validators.required),
+      'endDate': new FormControl('', Validators.required)
+    })
+  }
+
+  onSearchClicked(){
+    const startDate = this.searchForm.get('startDate').value;
+    const endDate = this.searchForm.get('endDate').value;
+
+    this.neoService.fetchAsteroids(startDate, endDate).subscribe({
+      next: (data) => {
+        console.log(data);
       }
-    );
+    });
   }
 }

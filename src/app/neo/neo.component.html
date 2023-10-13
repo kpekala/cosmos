@@ -2,21 +2,22 @@
   <div class="title-container">
       <span class="neo-title">Near Earth Object Web Service</span>
   </div>
-  <form class="example-form">
+  <form [formGroup]="searchForm" (ngSubmit)="onSearchClicked()">
     <div class="search-container">
 
       <mat-form-field class="example-full-width">
         <mat-label>Start date</mat-label>
-        <input matInput type="date" >
+        <input matInput type="date" formControlName="startDate">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>End date</mat-label>
-        <input matInput type="date">
+        <input matInput type="date" formControlName="endDate">
       </mat-form-field>
-      <button mat-stroked-button color="primary" class="search-btn">
-        Search</button>
       
+      <button mat-stroked-button color="primary" class="search-btn"
+        type="submit" [disabled]="searchForm.invalid">
+        Search</button>
     </div>
   </form>
 </div>
