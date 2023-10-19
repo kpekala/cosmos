@@ -11,7 +11,8 @@ export class NeoService {
     const apiKey = environment.nasaApiKey;
     const params = new HttpParams()
       .set('api_key', apiKey) 
-      .set('start_date', '2023-09-20');
+      .set('start_date', startDate)
+      .set('end_date', endDate);
 
     return this.http.get('https://api.nasa.gov/neo/rest/v1/feed',{params: params});
   }
