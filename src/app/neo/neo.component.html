@@ -22,4 +22,7 @@
       <mat-spinner *ngIf="isLoading" diameter="48"></mat-spinner>
     </div>
   </form>
+  <div class="neo-list-container" *ngIf="asteroids.length !== 0">
+    <app-neo-list [asteroids]="asteroids"></app-neo-list>
+  </div>
 </div>

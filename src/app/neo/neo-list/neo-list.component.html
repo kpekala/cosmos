@@ -1,0 +1,16 @@
+<div *ngFor="let asteroid of asteroids">
+    <div class="neo-card-container">
+        <mat-card>
+            <div class="neo-card">
+                <div>
+                    <b>Name: {{asteroid.name}}</b>
+                    <span class="date-text">{{asteroid.approachDate}}</span>
+                </div>
+                <div>
+                    <span>Magnitude: {{asteroid.magnitude}}</span>
+                    <span class="date-text">Diameter: {{asteroid.diameter}}</span>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

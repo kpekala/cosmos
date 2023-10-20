@@ -30,8 +30,8 @@ export class NeoComponent implements OnInit{
 
     this.neoService.fetchAsteroids(startDate, endDate).subscribe({
       next: (data) => {
-        console.log(data);
         this.isLoading = false;
+        this.asteroids = data;
       },
       error: (error) => {
         this.isLoading = false;

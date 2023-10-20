@@ -8,7 +8,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import { NeoListComponent } from './neo-list/neo-list.component';
+import {MatCardModule} from '@angular/material/card';
 
 const routes: Routes = [
   {path: 'neo', component: NeoComponent, pathMatch: 'full'}
@@ -16,7 +17,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    NeoComponent
+    NeoComponent,
+    NeoListComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ const routes: Routes = [
     MatFormFieldModule, 
     MatInputModule,
     MatButtonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   exports: [
     RouterModule
